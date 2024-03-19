@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Bar Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Renewal of Driving License</h2>
+      <div class="page page1 active">
+        <div class="question">
+          <label for="text1">First Name</label>
+          <input
+            type="text"
+            id="text1"
+            maxlength="10"
+            oninput="checkInputs()"
+          />
+        </div>
+        <div class="question">
+          <label for="text2">Last Name</label>
+          <input
+            type="text"
+            id="text2"
+            maxlength="10"
+            oninput="checkInputs()"
+          />
+        </div>
+        <button onclick="nextPage()">Next</button>
+      </div>
+      <div class="page page2">
+        <div class="question">
+          <label for="select1">Year of the License</label>
+          <select id="select1" onchange="checkInputs()">
+            <option value="">year</option>
+            <option value="option1">2011</option>
+            <option value="option1">2012</option>
+            <option value="option1">2012</option>
+            <option value="option1">2013</option>
+            <option value="option1">2014</option>
+            <option value="option1">2015</option>
+            <option value="option1">2016</option>
+            <option value="option1">2017</option>
+            <option value="option2">2018</option>
+            <option value="option1">2019</option>
+            <option value="option1">2020</option>
+          </select>
+        </div>
+        <div class="question">
+          <label for="select2">Issue</label>
+          <select id="select2" onchange="checkInputs()">
+            <option value="">Select an issue</option>
+            <option value="option1">Sales</option>
+            <option value="option2">Document pickup</option>
+            <option value="option3">Document dispatch</option>
+            <option value="option4">Document return</option>
+            <option value="option5">Document Payment</option>
+          </select>
+        </div>
+        <button onclick="prevPage()">Back</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+      <div class="page page3">
+        <div class="question">
+          <label>Nature of Driving License</label><br />
+          <input
+            type="radio"
+            name="radio"
+            value="option1"
+            onchange="checkInputs()"
+          />
+          Private
+          <br />
+          <input
+            type="radio"
+            name="radio"
+            value="option2"
+            onchange="checkInputs()"
+          />
+          Commercial<br />
+        </div>
+        <button onclick="prevPage()">Submit</button>
+      </div>
+      <div class="progress-bar">
+        <div id="progress" class="progress" style="width: 0%"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
